@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="ResortReservationApp">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dist/ResortReservationApp.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
