@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="638.0" prefWidth="1019.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="staff.StaffAccessController">
+   <children>
+      <AnchorPane layoutX="-6.0" prefHeight="638.0" prefWidth="1030.0" style="-fx-background-color: white;">
+         <children>
+            <AnchorPane layoutX="4.0" prefHeight="162.0" prefWidth="1030.0" style="-fx-background-color: white;">
+               <children>
+                  <Label contentDisplay="CENTER" layoutX="217.0" layoutY="10.0" prefHeight="78.0" prefWidth="776.0" text="RESORT MANAGEMENT">
+                     <font>
+                        <Font name="Bungee Inline" size="63.0" />
+                     </font>
+                     <effect>
+                        <DropShadow height="34.11" radius="16.8525" spread="0.1" width="35.3">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </Label>
+                  <ImageView fitHeight="212.0" fitWidth="230.0" layoutX="-13.0" layoutY="-45.0">
+                     <image>
+                        <Image url="@../img/Summer_Logo-removebg-preview.png" />
+                     </image>
+                  </ImageView>
+                  <Label contentDisplay="CENTER" layoutX="217.0" layoutY="63.0" prefHeight="78.0" prefWidth="314.0" text="SYSTEM">
+                     <font>
+                        <Font name="Bungee Inline" size="63.0" />
+                     </font>
+                     <effect>
+                        <DropShadow height="34.11" radius="16.8525" spread="0.1" width="35.3">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </Label>
+                  <Button fx:id="logout" layoutX="912.0" layoutY="95.0" mnemonicParsing="false" onAction="#logout" prefHeight="32.0" prefWidth="103.0" style="-fx-background-radius: 15;" text="Log Out">
+                     <font>
+                        <Font name="Symbol" size="13.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <TabPane layoutX="4.0" layoutY="142.0" prefHeight="498.0" prefWidth="1030.0" style="-fx-background-color: white;" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab id="book" text="Book Reservation">
+                  <content>
+                    <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="470.0" prefWidth="998.0" style="-fx-background-color: white;">
+                           <children>
+                              <TextField fx:id="guestName" layoutX="141.0" layoutY="207.0" prefHeight="42.0" prefWidth="333.0" promptText="Full Name" />
+                              <TextField fx:id="guestContact" layoutX="141.0" layoutY="261.0" prefHeight="42.0" prefWidth="333.0" promptText="Contact No." />
+                              <TextField fx:id="bookID" editable="false" layoutX="141.0" layoutY="152.0" prefHeight="42.0" prefWidth="333.0" promptText="ID">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font></TextField>
+                              <DatePicker fx:id="from" layoutX="664.0" layoutY="153.0" prefHeight="39.0" prefWidth="299.0" promptText="From" />
+                              <DatePicker fx:id="to" layoutX="664.0" layoutY="208.0" prefHeight="39.0" prefWidth="299.0" promptText="To" />
+                              <TextField fx:id="compNum" layoutX="663.0" layoutY="261.0" prefHeight="42.0" prefWidth="302.0" promptText="Number of Company" />
+                              <Label graphicTextGap="6.0" layoutX="39.0" layoutY="152.0" prefHeight="42.0" prefWidth="101.0" text="Booking ID :">
+                                 <font>
+                                    <Font name="Century Gothic" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label graphicTextGap="6.0" layoutX="39.0" layoutY="207.0" prefHeight="42.0" prefWidth="101.0" text="Name         :">
+                                 <font>
+                                    <Font name="Century Gothic" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label graphicTextGap="6.0" layoutX="541.0" layoutY="152.0" prefHeight="42.0" prefWidth="115.0" text="Starting Date :">
+                                 <font>
+                                    <Font name="Century Gothic" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label graphicTextGap="6.0" layoutX="541.0" layoutY="207.0" prefHeight="42.0" prefWidth="115.0" text="End Date        :">
+                                 <font>
+                                    <Font name="Century Gothic" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label graphicTextGap="6.0" layoutX="541.0" layoutY="261.0" prefHeight="42.0" prefWidth="115.0" text="Comp No.      :">
+                                 <font>
+                                    <Font name="Century Gothic" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="bookButton" layoutX="408.0" layoutY="355.0" mnemonicParsing="false" onAction="#bookReservation" onMouseClicked="#bookReservation" prefHeight="39.0" prefWidth="186.0" style="-fx-background-radius: 50;" text="Book">
+                                 <font>
+                                    <Font name="Symbol" size="15.0" />
+                                 </font>
+                              </Button>
+                              <TextField fx:id="status" editable="false" layoutX="739.0" layoutY="396.0" prefHeight="42.0" prefWidth="224.0" promptText="Status" />
+                              <Label graphicTextGap="6.0" layoutX="739.0" layoutY="354.0" prefHeight="42.0" prefWidth="162.0" text="Reservation Status :">
+                                 <font>
+                                    <Font name="Century Gothic Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label contentDisplay="CENTER" graphicTextGap="6.0" layoutX="330.0" layoutY="39.0" prefHeight="44.0" prefWidth="341.0" text="BOOK RESERVATION" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="Century Gothic" size="35.0" />
+                                 </font>
+                              </Label>
+                              <Label graphicTextGap="6.0" layoutX="208.0" layoutY="109.0" prefHeight="42.0" prefWidth="198.0" text="Guest Information">
+                                 <font>
+                                    <Font name="Century Gothic Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label graphicTextGap="6.0" layoutX="39.0" layoutY="261.0" prefHeight="42.0" prefWidth="101.0" text="Contact     :">
+                                 <font>
+                                    <Font name="Century Gothic" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label graphicTextGap="6.0" layoutX="717.0" layoutY="109.0" prefHeight="42.0" prefWidth="198.0" text="Booking Information">
+                                 <font>
+                                    <Font name="Century Gothic Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="clear1" layoutX="428.0" layoutY="407.0" mnemonicParsing="false" onAction="#clearField" onMouseClicked="#bookReservation" prefHeight="38.0" prefWidth="146.0" style="-fx-background-radius: 50;" text="Clear">
+                                 <font>
+                                    <Font name="Symbol" size="15.0" />
+                                 </font>
+                              </Button>
+                              <TextField fx:id="payable" editable="false" layoutX="39.0" layoutY="384.0" prefHeight="42.0" prefWidth="271.0" promptText="Amount" />
+                              <Label graphicTextGap="6.0" layoutX="39.0" layoutY="341.0" prefHeight="42.0" prefWidth="141.0" text="Amount to pay:">
+                                 <font>
+                                    <Font name="Century Gothic" size="16.0" />
+                                 </font>
+                              </Label>
+                           </children></AnchorPane>
+                  </content>
+                </Tab>
+                <Tab id="check" text="Check Reservation">
+                     <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="510.0" prefWidth="1010.0" style="-fx-background-color: white;">
+                           <children>
+                              <Label graphicTextGap="6.0" layoutX="32.0" layoutY="183.0" prefHeight="42.0" prefWidth="101.0" text="Booking ID :">
+                                 <font>
+                                    <Font name="Century Gothic" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label graphicTextGap="6.0" layoutX="32.0" layoutY="253.0" prefHeight="42.0" prefWidth="101.0" text="Name         :">
+                                 <font>
+                                    <Font name="Century Gothic" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="checkButton" layoutX="162.0" layoutY="330.0" mnemonicParsing="false" onAction="#checkReservation" prefHeight="32.0" prefWidth="166.0" style="-fx-background-radius: 50;" text="Check">
+                                 <font>
+                                    <Font name="Symbol" size="13.0" />
+                                 </font>
+                              </Button>
+                              <Label contentDisplay="CENTER" graphicTextGap="6.0" layoutX="306.0" layoutY="29.0" prefHeight="46.0" prefWidth="379.0" text="CHECK RESERVATION" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="Century Gothic" size="35.0" />
+                                 </font>
+                              </Label>
+                              <Label graphicTextGap="6.0" layoutX="154.0" layoutY="113.0" prefHeight="42.0" prefWidth="212.0" text="GUEST INFORMATION">
+                                 <font>
+                                    <Font name="Century Gothic Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label graphicTextGap="6.0" layoutX="740.0" layoutY="92.0" prefHeight="42.0" prefWidth="194.0" text="BOOKING INFORMATION">
+                                 <font>
+                                    <Font name="Century Gothic Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="checkID" layoutX="133.0" layoutY="183.0" prefHeight="42.0" prefWidth="326.0" promptText="Booking ID" />
+                              <TextField fx:id="checkName" layoutX="134.0" layoutY="251.0" prefHeight="42.0" prefWidth="325.0" promptText="Full Name" />
+                              <Line endX="-100.0" endY="361.5999755859375" layoutX="615.0" layoutY="50.0" startX="-100.0" startY="63.00001525878906" stroke="#c9c7c4" strokeLineCap="BUTT" strokeWidth="3.0" />
+                              <Label graphicTextGap="6.0" layoutX="594.0" layoutY="138.0" prefHeight="42.0" prefWidth="95.0" text="Booking ID :">
+                                 <font>
+                                    <Font name="Century Gothic" size="13.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="printID" editable="false" layoutX="679.0" layoutY="138.0" prefHeight="32.0" prefWidth="317.0" />
+                              <Label graphicTextGap="6.0" layoutX="594.0" layoutY="174.0" prefHeight="42.0" prefWidth="95.0" text="Name        :">
+                                 <font>
+                                    <Font name="Century Gothic" size="13.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="printName" editable="false" layoutX="679.0" layoutY="179.0" prefHeight="32.0" prefWidth="317.0" />
+                              <Label graphicTextGap="6.0" layoutX="594.0" layoutY="213.0" prefHeight="42.0" prefWidth="95.0" text="Contact # :">
+                                 <font>
+                                    <Font name="Century Gothic" size="13.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="printContact" editable="false" layoutX="679.0" layoutY="218.0" prefHeight="32.0" prefWidth="317.0" />
+                              <Label graphicTextGap="6.0" layoutX="594.0" layoutY="250.0" prefHeight="42.0" prefWidth="95.0" text="Comp No. :">
+                                 <font>
+                                    <Font name="Century Gothic" size="13.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="printComp" editable="false" layoutX="679.0" layoutY="256.0" prefHeight="32.0" prefWidth="317.0" />
+                              <Label graphicTextGap="6.0" layoutX="594.0" layoutY="288.0" prefHeight="42.0" prefWidth="95.0" text="From           :">
+                                 <font>
+                                    <Font name="Century Gothic" size="13.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="printFrom" editable="false" layoutX="679.0" layoutY="293.0" prefHeight="32.0" prefWidth="317.0" />
+                              <Label graphicTextGap="6.0" layoutX="594.0" layoutY="331.0" prefHeight="42.0" prefWidth="95.0" text="To                :">
+                                 <font>
+                                    <Font name="Century Gothic" size="13.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="printTo" editable="false" layoutX="679.0" layoutY="336.0" prefHeight="32.0" prefWidth="317.0" />
+                              <Label graphicTextGap="6.0" layoutX="594.0" layoutY="367.0" prefHeight="42.0" prefWidth="95.0" text="Booking Date :">
+                                 <font>
+                                    <Font name="Century Gothic" size="11.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="printBookingDate" editable="false" layoutX="679.0" layoutY="373.0" prefHeight="32.0" prefWidth="317.0" />
+                              <Button fx:id="clear2" layoutX="162.0" layoutY="372.0" mnemonicParsing="false" onAction="#clearField" prefHeight="32.0" prefWidth="166.0" style="-fx-background-radius: 50;" text="Clear">
+                                 <font>
+                                    <Font name="Symbol" size="13.0" />
+                                 </font>
+                              </Button>
+                           </children></AnchorPane>
+                     </content>
+                </Tab>
+                  <Tab id="cancel" text="Cancel Reservation">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="472.0" prefWidth="1010.0" style="-fx-background-color: white;">
+                           <children>
+                              <Label graphicTextGap="6.0" layoutX="39.0" layoutY="165.0" prefHeight="42.0" prefWidth="95.0" text="Booking ID :">
+                                 <font>
+                                    <Font name="Century Gothic" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label graphicTextGap="6.0" layoutX="39.0" layoutY="217.0" prefHeight="42.0" prefWidth="101.0" text="Name         :">
+                                 <font>
+                                    <Font name="Century Gothic" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="cancel" layoutX="744.0" layoutY="386.0" mnemonicParsing="false" onAction="#cancelReservation" prefHeight="39.0" prefWidth="154.0" style="-fx-background-radius: 50;" text="Cancel Reservation" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="Symbol" size="13.0" />
+                                 </font>
+                              </Button>
+                              <Label contentDisplay="CENTER" graphicTextGap="6.0" layoutX="317.0" layoutY="30.0" prefHeight="46.0" prefWidth="395.0" text="CANCEL RESERVATION" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="Century Gothic" size="35.0" />
+                                 </font>
+                              </Label>
+                              <Label graphicTextGap="6.0" layoutX="167.0" layoutY="99.0" prefHeight="42.0" prefWidth="212.0" text="GUEST INFORMATION">
+                                 <font>
+                                    <Font name="Century Gothic Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label graphicTextGap="6.0" layoutX="700.0" layoutY="66.0" prefHeight="42.0" prefWidth="243.0" text="BOOKING INFORMATION">
+                                 <font>
+                                    <Font name="Century Gothic Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="searchID" layoutX="143.0" layoutY="165.0" prefHeight="42.0" prefWidth="326.0" promptText="Booking ID" />
+                              <TextField fx:id="searchName" layoutX="141.0" layoutY="217.0" prefHeight="42.0" prefWidth="330.0" promptText="Full Name" />
+                              <Line endX="-100.0" endY="361.5999755859375" layoutX="615.0" layoutY="34.0" startX="-100.0" startY="63.00001525878906" stroke="#c9c7c4" strokeLineCap="BUTT" strokeWidth="3.0" />
+                              <Button fx:id="cancelSearchButton" layoutX="179.0" layoutY="333.0" mnemonicParsing="false" onAction="#cancelSearchReservation" prefHeight="32.0" prefWidth="166.0" style="-fx-background-radius: 50;" text="Search">
+                                 <font>
+                                    <Font name="Symbol" size="13.0" />
+                                 </font>
+                              </Button>
+                              <Label graphicTextGap="6.0" layoutX="578.0" layoutY="99.0" prefHeight="42.0" prefWidth="95.0" text="Booking ID :">
+                                 <font>
+                                    <Font name="Century Gothic" size="13.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="cancelID" editable="false" layoutX="663.0" layoutY="104.0" prefHeight="32.0" prefWidth="317.0" />
+                              <Label graphicTextGap="6.0" layoutX="578.0" layoutY="142.0" prefHeight="42.0" prefWidth="95.0" text="Name        :">
+                                 <font>
+                                    <Font name="Century Gothic" size="13.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="cancelName" editable="false" layoutX="663.0" layoutY="147.0" prefHeight="32.0" prefWidth="317.0" />
+                              <Label graphicTextGap="6.0" layoutX="578.0" layoutY="183.0" prefHeight="42.0" prefWidth="95.0" text="Contact # :">
+                                 <font>
+                                    <Font name="Century Gothic" size="13.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="cancelContact" editable="false" layoutX="663.0" layoutY="188.0" prefHeight="32.0" prefWidth="317.0" />
+                              <Label graphicTextGap="6.0" layoutX="578.0" layoutY="225.0" prefHeight="42.0" prefWidth="95.0" text="Comp No. :">
+                                 <font>
+                                    <Font name="Century Gothic" size="13.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="cancelComp" editable="false" layoutX="663.0" layoutY="230.0" prefHeight="32.0" prefWidth="317.0" />
+                              <Label graphicTextGap="6.0" layoutX="578.0" layoutY="262.0" prefHeight="42.0" prefWidth="95.0" text="From           :">
+                                 <font>
+                                    <Font name="Century Gothic" size="13.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="cancelFrom" editable="false" layoutX="663.0" layoutY="267.0" prefHeight="32.0" prefWidth="317.0" />
+                              <Label graphicTextGap="6.0" layoutX="578.0" layoutY="304.0" prefHeight="42.0" prefWidth="95.0" text="To                :">
+                                 <font>
+                                    <Font name="Century Gothic" size="13.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="cancelTo" editable="false" layoutX="663.0" layoutY="309.0" prefHeight="32.0" prefWidth="317.0" />
+                              <Label graphicTextGap="6.0" layoutX="578.0" layoutY="344.0" prefHeight="42.0" prefWidth="95.0" text="Booking Date :">
+                                 <font>
+                                    <Font name="Century Gothic" size="11.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="cancelBookingdate" editable="false" layoutX="663.0" layoutY="349.0" prefHeight="32.0" prefWidth="317.0" />
+                              <Button fx:id="clear3" layoutX="179.0" layoutY="370.0" mnemonicParsing="false" onAction="#clearField" prefHeight="32.0" prefWidth="166.0" style="-fx-background-radius: 50;" text="Clear">
+                                 <font>
+                                    <Font name="Symbol" size="13.0" />
+                                 </font>
+                              </Button>
+                              <TextField fx:id="cancelStatus" editable="false" layoutX="809.0" layoutY="425.0" prefHeight="32.0" prefWidth="178.0" promptText="Status" style="-fx-background-color: transparent;">
+                                 <font>
+                                    <Font name="Century Gothic Bold" size="11.0" />
+                                 </font>
+                              </TextField>
+                              <Label graphicTextGap="6.0" layoutX="686.0" layoutY="420.0" prefHeight="42.0" prefWidth="115.0" text="Cancelation Status :">
+                                 <font>
+                                    <Font name="Century Gothic" size="11.0" />
+                                 </font>
+                              </Label>
+                           </children></AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab id="bookList" text="Booking List">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="442.0" prefWidth="960.0">
+                           <children>
+                              <TableView fx:id="guesttable" layoutX="6.0" layoutY="40.0" onSort="#loadGuest" prefHeight="422.0" prefWidth="1019.0">
+                                <columns>
+                                  <TableColumn fx:id="idColumn" editable="false" prefWidth="89.60000324249268" resizable="false" text="ID" />
+                                  <TableColumn fx:id="nameColumn" editable="false" prefWidth="258.40003967285156" resizable="false" text="NAME" />
+                                    <TableColumn fx:id="contactColumn" editable="false" prefWidth="145.5999755859375" resizable="false" style="background-color: white;" text="CONTACT" />
+                                    <TableColumn fx:id="compColumn" editable="false" prefWidth="87.20001220703125" resizable="false" style="background-color: white;" text="COMPANY" />
+                                    <TableColumn fx:id="fromColumn" editable="false" prefWidth="136.0" resizable="false" style="background-color: white;" text="FROM" />
+                                    <TableColumn fx:id="toColumn" editable="false" prefWidth="136.0" resizable="false" text="TO" />
+                                    <TableColumn fx:id="bookdateColumn" editable="false" prefWidth="160.79986572265625" resizable="false" text="BOOKING DATE" />
+                                </columns>
+                              </TableView>
+                              <Label contentDisplay="CENTER" graphicTextGap="6.0" layoutX="370.0" prefHeight="46.0" prefWidth="219.0" text="RESERVATION LIST" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="Century Gothic Bold" size="25.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="refresh" layoutX="909.0" layoutY="7.0" mnemonicParsing="false" onAction="#loadGuest" prefHeight="26.0" prefWidth="106.0" style="-fx-background-radius: 9;" text="Refresh LIst">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Button>
+                           </children></AnchorPane>
+                     </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
